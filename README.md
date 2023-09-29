@@ -14,4 +14,4 @@ VITE_API_KEY_GOOGLE_MAPS=YOUR_API_KEY_GOOGLE_MAPS
 
 - Instalar las dependencias `npm install`
 
-- Ejecutar el proyecto `npm start`
+- Ejecutar el proyecto `npm dev`
