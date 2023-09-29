@@ -1,8 +1,17 @@
-# React + Vite
+# Integracion Google Maps con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación
+- Clonar el repositorio `https://github.com/CrisUTP/react-google-maps`
+
+- Crear un archivo .env con las variables de entorno, en la raiz del proyecto, similar al archivo .env.example
+
+
+```
+VITE_API_KEY_GOOGLE_MAPS=YOUR_API_KEY_GOOGLE_MAPS
+```
+
+- Instalar las dependencias `npm install`
+
+- Ejecutar el proyecto `npm start`
