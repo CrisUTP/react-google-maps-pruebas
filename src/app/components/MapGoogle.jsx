@@ -1,41 +1,38 @@
-import { useState } from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap } from "@react-google-maps/api";
+import { useState, useContext } from "react";
 
-import { API_KEY_GOOGLE_MAPS } from "../config/env";
+import { GoogleMapsContext } from "../contexts/GoogleMapsContext";
 import IsLoading from "./IsLoading";
 
 /**
- * @param {Object} params.
+ * @param {Object} params
  * @param {ReactNode} params.children - Los elementos hijos que se renderizarán dentro del componente GoogleMap.
- * @param {Function<google.maps.Ma>} params.onLoad - Se ejecuta cuando carga el mapa, en el parametro tiene la instancia del mapa
  * @param {import('@react-google-maps/api').GoogleMapProps} params.configGoogleMap - Son las propiedades para configurar el mapa base.
  * @returns {JSX.Element} - El componente GoogleMap renderizado.
  */
 const MapGoogle = ({
   children,
   configGoogleMap,
-  googleMapsApiKey = API_KEY_GOOGLE_MAPS,
-  onLoad = () => {},
 }) => {
   const [mapLoaded, setMapLoaded] = useState(false);
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey,
-  });
+  const { isLoaded, setMap } = useContext(GoogleMapsContext);
 
   const renderChildren = (map) => {
     setTimeout(() => {
       setMapLoaded(true);
-      onLoad(map);
+      setMap(map);
     }, 100);
   };
 
   return (
     <>
-      <p className="font-bold text-2xl">Google Maps Components</p>
+      <p className="font-bold text-2xl">Google Maps Component</p>
       <hr className="my-2" />
       <IsLoading isLoaded={isLoaded}>
         <GoogleMap
-          options={{ disableDoubleClickZoom: true }}
+          options={{ 
+            disableDoubleClickZoom: true ,
+          }}
           onLoad={renderChildren}
           mapContainerClassName="h-full w-full"
           center={{ lat: 19.04146906682182, lng: -98.20633679136121 }}
