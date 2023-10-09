@@ -1,10 +1,9 @@
 import { Marker } from "@react-google-maps/api";
+import { useState } from "react";
 
 import { markersDefault } from "./config/markersDefault";
 import MapGoogle from "./components/MapGoogle";
 import DirectionsRendererComponent from "./components/DirectionComponent";
-import { useState } from "react";
-import { Autocomplete } from "@react-google-maps/api";
 
 const App = () => {
 
