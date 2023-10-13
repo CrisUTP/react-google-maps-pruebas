@@ -3,10 +3,10 @@
 [Inicio](../../README.md)
 
 ## ContextGoogleMaps
-Es el context para poder acceder a las propiedades y métodos del componente GoogleMapProvider.
+Este context se utiliza para poder acceder a las propiedades y métodos del componente GoogleMapProvider.
 
 ## GoogleMapProvider
-El componente se encarga de cargar el script de Google Maps para que despues en cualquier sitio de tu aplicación puedas utilizar cualquiera de los servicios de Google Maps.
+Este componente se encarga de cargar el script de Google Maps para que despues en cualquier sitio de tu aplicación puedas utilizar los servicios de Google Maps.
 
 
 ## Propiedades y métodos
