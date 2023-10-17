@@ -25,24 +25,20 @@ const MapGoogle = ({
   };
 
   return (
-    <>
-      <p className="font-bold text-2xl">Google Maps Component</p>
-      <hr className="my-2" />
-      <IsLoading isLoaded={isLoaded}>
-        <GoogleMap
-          options={{ 
-            disableDoubleClickZoom: true ,
-          }}
-          onLoad={renderChildren}
-          mapContainerClassName="h-full w-full"
-          center={{ lat: 19.04146906682182, lng: -98.20633679136121 }}
-          zoom={12}
-          {...configGoogleMap}
-        >
-          <IsLoading isLoaded={mapLoaded}>{children}</IsLoading>
-        </GoogleMap>
-      </IsLoading>
-    </>
+    <IsLoading isLoaded={isLoaded}>
+      <GoogleMap
+        options={{ 
+          disableDoubleClickZoom: true ,
+        }}
+        onLoad={renderChildren}
+        mapContainerClassName="h-full w-full"
+        center={{ lat: 19.04146906682182, lng: -98.20633679136121 }}
+        zoom={12}
+        {...configGoogleMap}
+      >
+        <IsLoading isLoaded={mapLoaded}>{children}</IsLoading>
+      </GoogleMap>
+    </IsLoading>
   );
 };
 
